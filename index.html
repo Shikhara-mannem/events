@@ -3,43 +3,176 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#0d1117">
-    <title>Event Dashboard</title>
+    <title>Engagement Invitation | Sri Mitra & Sai Kumar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
-        :root { --bg: #0d1117; --card: #161b22; --border: #30363d; --text: #c9d1d9; --blue: #58a6ff; --green: #238636; }
-        body { font-family: -apple-system, system-ui, sans-serif; background: var(--bg); color: var(--text); margin: 0; padding: 20px; display: flex; justify-content: center; }
-        .container { width: 100%; max-width: 500px; }
-        h1 { font-size: 20px; border-bottom: 1px solid var(--border); padding-bottom: 10px; margin-bottom: 20px; }
-        .event-card { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 16px; margin-bottom: 16px; position: relative; }
-        .status-tag { position: absolute; top: 16px; right: 16px; font-size: 11px; color: #7ee787; border: 1px solid #238636; padding: 2px 8px; border-radius: 20px; }
-        .event-name { color: var(--blue); font-size: 18px; font-weight: 600; text-decoration: none; display: block; margin-bottom: 8px; }
-        .event-detail { font-size: 14px; color: #8b949e; line-height: 1.6; }
-        .btn-group { display: flex; gap: 10px; margin-top: 15px; }
-        .btn { flex: 1; text-align: center; background: var(--green); color: white; padding: 8px; border-radius: 6px; text-decoration: none; font-size: 14px; font-weight: 500; }
-        .btn-secondary { background: #30363d; }
-        .footer { text-align: center; font-size: 12px; color: #484f58; margin-top: 40px; }
+        :root {
+            /* Peacock & Wedding Palette */
+            --peacock-green: #06402B;
+            --peacock-blue: #005f6b;
+            --marigold-orange: #FF8C00;
+            --deep-pink: #D81B60;
+            --gold: #D4AF37;
+            --off-white: #fdfaf1;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            /* Orange and Pink backdrop as requested */
+            background: linear-gradient(135deg, var(--marigold-orange), var(--deep-pink));
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 450px;
+            perspective: 1000px;
+        }
+
+        /* Classy Dark Green Card */
+        .invitation-card {
+            background: var(--peacock-green);
+            border: 3px solid var(--gold);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Peacock Motif Decoration */
+        .invitation-card::before {
+            content: "🦚";
+            font-size: 50px;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            color: var(--gold);
+            font-size: 28px;
+            margin-bottom: 10px;
+            border-bottom: 1px solid var(--gold);
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .event-title {
+            color: var(--off-white);
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            font-style: italic;
+            margin: 15px 0;
+        }
+
+        .names {
+            color: var(--gold);
+            font-size: 26px;
+            font-weight: 600;
+            margin: 10px 0;
+            letter-spacing: 1px;
+        }
+
+        .details {
+            color: #e0e0e0;
+            font-size: 15px;
+            line-height: 1.8;
+            margin: 20px 0;
+            border-top: 1px dashed rgba(212, 175, 55, 0.3);
+            border-bottom: 1px dashed rgba(212, 175, 55, 0.3);
+            padding: 15px 0;
+        }
+
+        .highlight {
+            color: var(--gold);
+            font-weight: 500;
+        }
+
+        /* Placeholders for Link and Location */
+        .location-section {
+            margin-top: 20px;
+            font-size: 14px;
+            color: var(--off-white);
+        }
+
+        .btn-group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 25px;
+        }
+
+        .btn {
+            background: var(--gold);
+            color: var(--peacock-green);
+            padding: 12px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            transition: transform 0.2s, background 0.2s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn:hover {
+            transform: scale(1.03);
+            background: #f1d592;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 1px solid var(--gold);
+            color: var(--gold);
+        }
+
+        .footer {
+            margin-top: 25px;
+            font-size: 11px;
+            color: rgba(255,255,255,0.7);
+            letter-spacing: 2px;
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Upcoming Events</h1>
 
-        <div class="event-card">
-            <span class="status-tag">Upcoming</span>
-            <a href="#" class="event-name">Wedding Anniversary Dinner</a>
-            <div class="event-detail">
-                📅 May 13, 2026 • 7:00 PM<br>
-                📍 Colorado Springs, CO<br>
-                📝 <i>Celebrating 2 years! Please RSVP by May 10.</i>
+    <div class="container">
+        <div class="invitation-card">
+            <h1>Save the Date</h1>
+            
+            <div class="event-title">For the Engagement of</div>
+            
+            <div class="names">
+                Sri Mitra <br> & <br> Sai Kumar
             </div>
+
+            <div class="details">
+                📅 <span class="highlight">[INSERT DATE HERE]</span><br>
+                🕒 <span class="highlight">[INSERT TIME HERE]</span><br>
+                <div class="location-section">
+                    📍 <strong>Location:</strong><br>
+                    [ENTER VENUE NAME & ADDRESS HERE]
+                </div>
+            </div>
+
             <div class="btn-group">
-                <a href="https://maps.app.goo.gl/XYZ123" target="_blank" class="btn">View Map</a>
-                <a href="https://wa.me/YOUR_PHONE_NUMBER" class="btn btn-secondary">WhatsApp RSVP</a>
+                <a href="[INSERT_GOOGLE_MAPS_LINK_HERE]" target="_blank" class="btn">View on Google Maps</a>
+                
+                <a href="https://wa.me/[INSERT_PHONE_NUMBER]" class="btn btn-secondary">WhatsApp RSVP</a>
             </div>
-        </div>
-        <div class="footer">
-            Built with GitHub Pages • Last updated today
+
+            <div class="footer">
+                TOGETHER WITH THEIR FAMILIES
+            </div>
         </div>
     </div>
+
 </body>
 </html>
