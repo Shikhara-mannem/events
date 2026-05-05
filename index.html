@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0d1117">
+    <title>Event Dashboard</title>
+    <style>
+        :root { --bg: #0d1117; --card: #161b22; --border: #30363d; --text: #c9d1d9; --blue: #58a6ff; --green: #238636; }
+        body { font-family: -apple-system, system-ui, sans-serif; background: var(--bg); color: var(--text); margin: 0; padding: 20px; display: flex; justify-content: center; }
+        .container { width: 100%; max-width: 500px; }
+        h1 { font-size: 20px; border-bottom: 1px solid var(--border); padding-bottom: 10px; margin-bottom: 20px; }
+        .event-card { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 16px; margin-bottom: 16px; position: relative; }
+        .status-tag { position: absolute; top: 16px; right: 16px; font-size: 11px; color: #7ee787; border: 1px solid #238636; padding: 2px 8px; border-radius: 20px; }
+        .event-name { color: var(--blue); font-size: 18px; font-weight: 600; text-decoration: none; display: block; margin-bottom: 8px; }
+        .event-detail { font-size: 14px; color: #8b949e; line-height: 1.6; }
+        .btn-group { display: flex; gap: 10px; margin-top: 15px; }
+        .btn { flex: 1; text-align: center; background: var(--green); color: white; padding: 8px; border-radius: 6px; text-decoration: none; font-size: 14px; font-weight: 500; }
+        .btn-secondary { background: #30363d; }
+        .footer { text-align: center; font-size: 12px; color: #484f58; margin-top: 40px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Upcoming Events</h1>
+
+        <div class="event-card">
+            <span class="status-tag">Upcoming</span>
+            <a href="#" class="event-name">Wedding Anniversary Dinner</a>
+            <div class="event-detail">
+                📅 May 13, 2026 • 7:00 PM<br>
+                📍 Colorado Springs, CO<br>
+                📝 <i>Celebrating 2 years! Please RSVP by May 10.</i>
+            </div>
+            <div class="btn-group">
+                <a href="https://maps.app.goo.gl/XYZ123" target="_blank" class="btn">View Map</a>
+                <a href="https://wa.me/YOUR_PHONE_NUMBER" class="btn btn-secondary">WhatsApp RSVP</a>
+            </div>
+        </div>
+        <div class="footer">
+            Built with GitHub Pages • Last updated today
+        </div>
+    </div>
+</body>
+</html>
